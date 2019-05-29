@@ -30,19 +30,15 @@ Este documento contém a especificação do projeto do banco de dados do projeto
 ## Marco de Entrega 02 em: (08/05/2019)<br>
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que informe quais são os gerentes de cada departamento incluindo as seguintes informações: número do departamento,  nome do departamento, e nome do gerente.
-* Relatório de empregados por projeto incluindo as seguintes informações: número do projeto, nome do projeto, rg do empregado, nome do empregado e quantidade de horas de trabalho do empregado alocadas ao projeto.
-* Relatório de empregados com dependentes incluindo as seguintes informações: rg do empregado, nome do empregado, nome do dependente, tipo de relação, data de nascimento do dependente e sexo do dependente.
-* Relatório com a quantidade de empregados por cada departamento incluindo as seguintes informações: nome do departamento, supervisor e quantidade de empregados alocados no departamento.
-* Relatório de supervisores e supervisionados incluindo as seguintes informações: nome do supervisor e nome do supervisionado.
- 
-## Marco de Entrega 03 em: (13/05/2019)<br>
+   Nossa empresa, a Wite, possui em seu projeto de coleta de lixo, o Witrash, diversos relatórios. Os principais podem ser vistos a seguir:
 
-#### 4.2 TABELA DE DADOS DO SISTEMA:
+    • Um relatório que informa os dados de cada usuário, como  nome, endereço, sexo,  RG, CPF e título de eleitor, tal como os nomes e os sexos de seus dependentes além de seu parentesco  com o usúario.
+    • Um relatório que contém as principais informações dos coletores, sendo elas  o código de todos os coletores, o tipo de lixo que eles podem carregar, sua capacidade máxima, e quanto dessa capacidade já foi preenchida.
+    • Um relatório que possui as informações sobre a atual situação dos coletores, como os dados de localização de todos os coletores, mostrados em um mapa interativo e em tempo real, os horários que eles irão passar em cada ponto, e os agendamentos feitos por usuários.
+    • Um relatório contendo o progresso de coleta diária, mostrando o total de quarteirões,  quais desses quarteirões já foram finalizados, o progresso nos que não foram e os coletores enviados para cada um deles.
+    • Um relatório que verifica que tipo de material entra em que tipo de coleta, entre orgânico, reciclável, hospitalar, e radioativo.
+
+ #### 4.2 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     e deve ser criada antes do modelo conceitual
