@@ -20,14 +20,11 @@ Este documento contém a especificação do projeto do banco de dados do projeto
 
 > Nosso sistema conterá as informações descritas a seguir. A respeito da residência serão armazenados, nome da rua, número da casa, número do quarteirão de acordo com uma divisão realizada pelos meios governamentais de cada localidade e enviada para nossa empresa, quantidade de dependentes, largura da rua para avaliar a viabilidade do envio de um coletor e tamanho do container fornecido. A respeito do representante seerão armazenados nome completo, cpf ,rg  , título de eleitor e cópia escaneada de um comprovante de residência, média de lixo mensal produzido e tipos de lixo (hospitalar, residêncial, radioativo, etc.). O agendamento deve ser feito a cada visita, ou por um determinado tempo, mas também será armazenado. Cada quarteirão e seus respectivos coletores serão supervisionados por um gerente, quarteirões formam bairros que também possuem seu gerente e assim sucessivamente até o nível estadual. Cada coletor pode ser direcionado a mais de um quarteirão após o término de seu quarteirão padrão, e caso um não termine sua coleta ele pode retornar ou outro coletor disponível será enviado. A idade de cada um dos dependentes do representante será requisitada para determinação do tipo de coletor. Após terminarem sua rota designada ou atingirem capacidade máxima os coletores se dirigirão para o centro de eliminação, onde os dejetos terão suas respectivas rotas. Lixo comum será descartado de forma sustentável, lixo reciclável será reciclado e lixo orgânico será enviado ao centro de compostagem e transformado em fertilizante orgânico.  Todos os dados podem ser alterados caso o usuário requisite e é imprescindível a atualização dos dados de forma correta para evitar problemas.
 
-## Marco de Entrega 01 em: (06/05/2019)<br>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
 ![Alt text](https://user-images.githubusercontent.com/51093933/58552933-ff2ccd00-81e9-11e9-8677-82a3865de28e.png?raw=true "Title")
 ![Pdf para o projeto Witrash da empresa Wite](https://github.com/discipint/trabalho01/files/3232159/New.Project.pdf?raw=true "Empresa Devcom")
-
-## Marco de Entrega 02 em: (08/05/2019)<br>
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
    Nossa empresa, a Wite, possui em seu projeto de coleta de lixo, o Witrash, diversos relatórios. Os principais podem ser vistos a seguir:
@@ -39,10 +36,8 @@ Este documento contém a especificação do projeto do banco de dados do projeto
     • Um relatório que verifica que tipo de material entra em que tipo de coleta, entre orgânico, reciclável, hospitalar, e radioativo.
 
  #### 4.2 TABELA DE DADOS DO SISTEMA:
- 
-![Exemplo de Tabela de dados da Wite](https://github.com/Trabsql1/trabalho01/blob/master/Weverton_e_Mateus.ods?raw=true "Tabela - Wite")
-
-## Marco de Entrega 04 em: (15/05/2019)<br>
+ Tabela com os principais dados do projeto Witrash:  
+![Tabela de dados da Wite](https://github.com/Trabsql1/trabalho01/blob/master/Weverton_e_Mateus.ods?raw=true "Tabela - Wite")
 
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
