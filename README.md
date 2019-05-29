@@ -5,35 +5,26 @@ Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+Weverton Gomes: wevertoncapixaba22@gmail.com<br>
+Mateus Maioli: matgiacomin.com<br>
 ...
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
-Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
+Este documento contém a especificação do projeto do banco de dados do projeto Whitrash 
 <br>e motivação da escolha realizada. <br>
 
-> A empresa "Devcom Projetos" visa colaborar com desenvolvimento de projetos para uma sociedade melhor. Sabendo-se dos desafios para gerenciar projetos dentro de uma empresa e visando unir as informações relativas a funcionários, departamentos e projetos em um mesmo local, ficamos motivados com o desenvolvimento deste sistema. O Sistema "Devcom" tem como objetivo gerenciar todas as informações ao desenvolvimento das atividades de projetos em diversas localidades do país. Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
+>A Whitrash tem como meta tornar a sociedade mais limpa e ajudar o meio ambiente, além de tornar o dia-a-dia dos cidadãos mais prático e simples. Considerando que os problemas ambientais que nós, como uma sociedade, enfrentamos no presente e com o objetivo de fazer o máximo para evitar o agravamento de tais problemas e agregar ao meio social. Nosso sistema consiste em um banco de dados construído através da coleta de dados fornecidos por cada indivíduo representante de uma residência, sendo os mais importantes endereço, quantidade de dependentes, quantidade de cada tipo de dejeto, informações pessoais do representante e o agendamento para a passagem do coletor.  O sistema gerenciará a coleta do material contido nos containers especialmente fornecidos pela Whitrash por meio de coletores automáticos e independentes.
  
 
 ### 3.MINI-MUNDO Novo<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
-> O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes. 
+> Nosso sistema conterá as informações descritas a seguir. A respeito da residência serão armazenados, nome da rua, número da casa, número do quarteirão de acordo com uma divisão realizada pelos meios governamentais de cada localidade e enviada para nossa empresa, quantidade de dependentes, largura da rua para avaliar a viabilidade do envio de um coletor e tamanho do container fornecido. A respeito do representante seerão armazenados nome completo, cpf ,rg  , título de eleitor e cópia escaneada de um comprovante de residência, média de lixo mensal produzido e tipos de lixo (hospitalar, residêncial, radioativo, etc.). O agendamento deve ser feito a cada visita, ou por um determinado tempo, mas também será armazenado. Cada quarteirão e seus respectivos coletores serão supervisionados por um gerente, quarteirões formam bairros que também possuem seu gerente e assim sucessivamente até o nível estadual. Cada coletor pode ser direcionado a mais de um quarteirão após o término de seu quarteirão padrão, e caso um não termine sua coleta ele pode retornar ou outro coletor disponível será enviado. A idade de cada um dos dependentes do representante será requisitada para determinação do tipo de coletor. Após terminarem sua rota designada ou atingirem capacidade máxima os coletores se dirigirão para o centro de eliminação, onde os dejetos terão suas respectivas rotas. Lixo comum será descartado de forma sustentável, lixo reciclável será reciclado e lixo orgânico será enviado ao centro de compostagem e transformado em fertilizante orgânico.  Todos os dados podem ser alterados caso o usuário requisite e é imprescindível a atualização dos dados de forma correta para evitar problemas.
 
 ## Marco de Entrega 01 em: (06/05/2019)<br>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
 
-Sugestão: https://balsamiq.com/products/mockups/<br>
-
-![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
+![Alt text](https://user-images.githubusercontent.com/51093933/58552933-ff2ccd00-81e9-11e9-8677-82a3865de28e.png?raw=true "Title")
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 
 ## Marco de Entrega 02 em: (08/05/2019)<br>
