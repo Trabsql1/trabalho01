@@ -6,7 +6,7 @@ Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 Weverton Gomes: wevertoncapixaba22@gmail.com<br>
-Mateus Maioli: matgiacomin.com<br>
+Mateus Maioli: matgiacomin@gmail.com.com<br>
 ...
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
@@ -48,7 +48,7 @@ Este documento contém a especificação do projeto do banco de dados do projeto
     e deve ser criada antes do modelo conceitual
     c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados da Wite](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
 
     
 ## Marco de Entrega 04 em: (15/05/2019)<br>
