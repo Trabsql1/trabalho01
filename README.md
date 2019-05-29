@@ -13,7 +13,7 @@ Mateus Maioli: matgiacomin.com<br>
 Este documento contém a especificação do projeto do banco de dados do projeto Whitrash 
 <br>e motivação da escolha realizada. <br>
 
->A Whitrash tem como meta tornar a sociedade mais limpa e ajudar o meio ambiente, além de tornar o dia-a-dia dos cidadãos mais prático e simples. Considerando que os problemas ambientais que nós, como uma sociedade, enfrentamos no presente e com o objetivo de fazer o máximo para evitar o agravamento de tais problemas e agregar ao meio social. Nosso sistema consiste em um banco de dados construído através da coleta de dados fornecidos por cada indivíduo representante de uma residência, sendo os mais importantes endereço, quantidade de dependentes, quantidade de cada tipo de dejeto, informações pessoais do representante e o agendamento para a passagem do coletor.  O sistema gerenciará a coleta do material contido nos containers especialmente fornecidos pela Whitrash por meio de coletores automáticos e independentes.
+>A Wite tem como meta tornar a sociedade mais limpa e ajudar o meio ambiente, além de tornar o dia-a-dia dos cidadãos mais prático e simples. Considerando que os problemas ambientais que nós, como uma sociedade, enfrentamos no presente e com o objetivo de fazer o máximo para evitar o agravamento de tais problemas e agregar ao meio social. Nosso sistema consiste em um banco de dados construído através da coleta de dados fornecidos por cada indivíduo representante de uma residência, sendo os mais importantes endereço, quantidade de dependentes, quantidade de cada tipo de dejeto, informações pessoais do representante e o agendamento para a passagem do coletor.  O sistema gerenciará a coleta do material contido nos containers especialmente fornecidos pela Whitrash por meio de coletores automáticos e independentes.
  
 
 ### 3.MINI-MUNDO Novo<br>
@@ -25,7 +25,7 @@ Este documento contém a especificação do projeto do banco de dados do projeto
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
 ![Alt text](https://user-images.githubusercontent.com/51093933/58552933-ff2ccd00-81e9-11e9-8677-82a3865de28e.png?raw=true "Title")
-![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
+![Pdf para o projeto Witrash da empresa Wite](https://github.com/discipint/trabalho01/files/3232159/New.Project.pdf?raw=true "Empresa Devcom")
 
 ## Marco de Entrega 02 em: (08/05/2019)<br>
 
