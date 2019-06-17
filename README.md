@@ -40,27 +40,13 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
  Tabela com os principais dados do projeto Witrash:  
 ![Tabela de dados da Wite](https://github.com/Trabsql1/trabalho01/blob/master/Weverton_e_Mateus.ods?raw=true "Tabela - Wite")
 
-### 5.MODELO CONCEITUAL<br>
-    A) NOTACAO ENTIDADE RELACIONAMENTO 
-        * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
-        * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
-        
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/Conc.png?raw=true "Modelo Conceitual")
-    
-    B) QUALIDADE 
-        Garantir que a semântica dos atributos seja clara no esquema
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas
-    
-        
+### 5.MODELO CONCEITUAL<br>          
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/Conc.png?raw=true "Modelo Conceitual")      
     
 #### 5.1 Validação do Modelo Conceitual
     [Beatriz e Júlia: [Beatriz]
     [Caio Lessa e Lucas]: [Caio L]
     
-## Marco de Entrega 05 em: (20/05/2019)<br>
-
 #### 5.2 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
     
