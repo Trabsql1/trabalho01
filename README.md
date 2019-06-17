@@ -46,7 +46,7 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
         
-![Alt text](https://github.com/discipint/trabalho01/blob/master/imagens/modelo_conceitual_empresa.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/Conc.png?raw=true "Modelo Conceitual")
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
@@ -56,8 +56,8 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Beatriz e Júlia: [Beatriz]
+    [Caio Lessa e Lucas]: [Caio L]
     
 ## Marco de Entrega 05 em: (20/05/2019)<br>
 
