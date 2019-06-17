@@ -48,13 +48,26 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
     [Caio Lessa e Lucas]: [Caio L]
     
 #### 5.2 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
-## Marco de Entrega 06 em: (22/05/2019)<br>
+      Representante: uma tabela que contem informações relativas ao usuário denominado represente.
+         Tag: Uma chave de um chip RFID que libera a abertura da lixeira ao representante. Ele também é identificado por essa tag
+         Nome: Campo que armazena o nome do representante.
+         RG: Campo que armazena o RG do representante.
+         CPF: Campo que armazena o CPF do representante.
+      Dependente: Tabela que armazena dados dos dependentes atrelados ao representante.
+         Nome: Campo que armazena o nome do dependente.
+         Código: Número unico do dependente de acordo com a quantidade de dependentes atreladas ao representante. Utilizado como chave.
+         Relação: Campo que armazena a relação entre o dependente e o representante.
+         Idade: Campo que armazena a idade do dependente.
+         Gênero: Campo que armazena o gênero do dependente.
+      Residência: Tabela que armazena informações da residência representada.
+         Casa: Campo que armazena o número da residência. Utilizado como chave.
+         Rua: Campo que armazena o nome da rua que a residência se encontra.
+      Lixeira: Tabela que armeza as informações de cada lixeira
+         Serial: Código único que cada lixeira possui
+         Tipo: Armazena o tipo de lixo que cada lixeira carrega
+         Peso: Armazena o peso atual da lixeira
+     A
+         ## Marco de Entrega 06 em: (22/05/2019)<br>
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
