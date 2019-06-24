@@ -66,9 +66,17 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
          Serial: Código único que cada lixeira possui
          Tipo: Armazena o tipo de lixo que cada lixeira carrega
          Peso: Armazena o peso atual da lixeira
-     A
-         ## Marco de Entrega 06 em: (22/05/2019)<br>
-
+     Agendamento
+         Protcolo: Código único de cada agendamento
+         Horário: campo que armazena a hora na qual o coletor agendado vai passar
+         Tipo de lixo produzido:campo qie armazena o tipo de lixo no qual deve-se agendar o coletor correspondente
+         Coletores requisitados: campo que armazena os coletores que foram agendados
+     Coletores:
+          Código do coletor: campo que armazena o codigo unico do coletor que sera usado para que o coletor seja agendado.
+          Peso Atual: campo que armazena o peso atual de um certo coletor, para verificar se um agendamento pode ser atendido por este
+          Posição Atual: campo que armazena o endereço atual do coletor, para verificar se este pode atender certo agendamento
+          quarteirão atribuido: campo que armazena a região pelo qual um coletor faz seus ciclos de colete
+       
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
