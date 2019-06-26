@@ -18,8 +18,8 @@ Este documento contém a especificação do projeto do banco de dados do projeto
 
 ### 3.MINI-MUNDO Novo<br>
 
-> Nosso sistema conterá as informações descritas a seguir. A respeito da residência serão armazenados, nome da rua, número da casa, número do quarteirão de acordo com uma divisão realizada pela direção do condimínio de cada localidade e enviada para nossa empresa, quantidade de dependentes. A respeito do representante serão armazenados nome completo, cpf ,rg, cópia escaneada de um comprovante de residência,(orgânico, reciclável, pilhas e bateria, e médicos). O agendamento deve ser feito a cada visita, ou por um determinado tempo, mas também será armazenado.
-Cada coletor pode ser direcionado a mais de um quarteirão após o término de seu quarteirão padrão, e caso um não termine sua coleta ele pode retornar ou outro coletor disponível será enviado. Após terminarem sua rota designada ou atingirem capacidade máxima os coletores se dirigirão para o centro de eliminação, ondde cada um dos dependentes do representante será requisitada para determinação do tipo de coletor. Após terminarem sua e os dejetos terão suas respectivas rotas. Lixo comum será descartado de forma sustentável, lixo reciclável será reciclado e lixo orgânico será enviado ao centro de compostagem e transformado em fertilizante orgânico.  Todos os dados podem ser alterados caso o usuário requisite e é imprescindível a atualização dos dados de forma correta para evitar problemas.
+> Nosso sistema conterá as informações descritas a seguir. A respeito da residência serão armazenados, nome da rua, número da casa, número do quarteirão de acordo com uma divisão realizada pela direção do condimínio de cada localidade e enviada para nossa empresa, quantidade de dependentes, sua relação com o representante, e seu nome. A respeito do representante serão armazenados nome completo, cpf ,rg, tipo de lixo a ser recolhido(orgânico, reciclável, pilhas e bateria, e médicos). O agendamento deve ser feito a cada visita, ou por um determinado tempo, mas também será armazenado.
+Cada coletor pode ser direcionado a mais de um agendamento após o término de seu quarteirão padrão, e caso um não termine sua coleta ele pode retornar ou outro coletor disponível será enviado. Após terminarem sua rota designada ou atingirem capacidade máxima os coletores se dirigirão para o centro de eliminação. Lixo comum será descartado de forma sustentável, lixo reciclável será reciclado e lixo orgânico será enviado ao centro de compostagem e transformado em fertilizante orgânico.  Todos os dados podem ser alterados caso o usuário requisite e é imprescindível a atualização dos dados de forma correta para evitar problemas.
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -82,10 +82,84 @@ Cada coletor pode ser direcionado a mais de um quarteirão após o término de s
 
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+CREATE TABLE Usuario (
+    CPF varchar,
+    RG varchar,
+    Tag integer PRIMARY KEY,
+    Nome varchar
+);
 
-## Marco de Entrega 07 em: (27/05/2019)<br>
+CREATE TABLE Residencia (
+    Casa integer PRIMARY KEY,
+    Rua varchar,
+    fk_Coletores_Codigo_do_Coletor integer
+);
+
+CREATE TABLE Lixeira (
+    Tipo varchar,
+    Peso float,
+    Serial integer PRIMARY KEY
+);
+
+CREATE TABLE Coletores (
+    Peso_Atual float,
+    Codigo_do_Coletor integer PRIMARY KEY,
+    Posicao_atual varchar,
+    Quarteirao_Atribuido integer
+);
+
+CREATE TABLE Dependentes (
+    Relacao varchar,
+    Idade integer,
+    Genero character,
+    Codigo integer PRIMARY KEY,
+    Nome varchar,
+    fk_Usuario_Tag integer
+);
+
+CREATE TABLE Acessa (
+    fk_Lixeira_Serial integer,
+    fk_Usuario_Tag integer
+);
+
+CREATE TABLE Agenda (
+    fk_Usuario_Tag integer,
+    fk_Coletores_Codigo_do_Coletor integer,
+    Protocolo integer PRIMARY KEY,
+    Horario date,
+    Tipo_Lixo varchar,
+    Coletor_requisitado integer
+);
+ 
+ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_2
+    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
+    REFERENCES Coletores (Codigo_do_Coletor)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Dependentes ADD CONSTRAINT FK_Dependentes_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
+    FOREIGN KEY (fk_Lixeira_Serial)
+    REFERENCES Lixeira (Serial)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
+    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
+    REFERENCES Coletores (Codigo_do_Coletor)
+    ON DELETE SET NULL;
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
