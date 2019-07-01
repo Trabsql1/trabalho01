@@ -163,8 +163,24 @@ ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
-        b) formato .SQL
+
+insert into Agenda
+values('1','1','123456789', '2019-12-10','Orgânico','1')
+
+insert into dependentes
+values('Filho','1','M', '1','Jonas','1')
+
+insert into coletores
+values('10','1','R. das Salivas','2')
+
+insert into lixeira
+values('Organico','10','12')
+
+insert into residencia
+values('1','R. das Flores')
+
+insert into usuario
+values('123.456.789-00','12.3456-ES','1','Marcos')
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
