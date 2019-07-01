@@ -309,10 +309,123 @@ values('123.456.789-00','12.3456-ES','1','Marcos'
 	'113.436.709-00','13.1456-ES','2','Lucas'
 	'123.456.789-00','12.3456-ES','3','Sazam')
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-     DROP TABLE usuario
-     DROP TABLE residencia
-     DROP TABLE lixeira
-     DROP TABLE dependentes
+     DROP TABLE usuario;
+     DROP TABLE residencia;
+     DROP TABLE lixeira;
+     DROP TABLE dependentes;
+     DROP TABLE acessa;
+     DROP TABLE agenda;
+     
+     CREATE TABLE Usuario (
+    CPF varchar,
+    RG varchar,
+    Tag integer PRIMARY KEY,
+    Nome varchar
+);
+
+CREATE TABLE Residencia (
+    Casa integer PRIMARY KEY,
+    Rua varchar,
+    fk_Coletores_Codigo_do_Coletor integer
+);
+
+CREATE TABLE Lixeira (
+    Tipo varchar,
+    Peso float,
+    Serial integer PRIMARY KEY
+);
+
+CREATE TABLE Coletores (
+    Peso_Atual float,
+    Codigo_do_Coletor integer PRIMARY KEY,
+    Posicao_atual varchar,
+    Quarteirao_Atribuido integer
+);
+
+CREATE TABLE Dependentes (
+    Relacao varchar,
+    Idade integer,
+    Genero character,
+    Codigo integer PRIMARY KEY,
+    Nome varchar,
+    fk_Usuario_Tag integer
+);
+
+CREATE TABLE Acessa (
+    fk_Lixeira_Serial integer,
+    fk_Usuario_Tag integer
+);
+
+CREATE TABLE Agenda (
+    fk_Usuario_Tag integer,
+    fk_Coletores_Codigo_do_Coletor integer,
+    Protocolo integer PRIMARY KEY,
+    Horario date,
+    Tipo_Lixo varchar,
+    Coletor_requisitado integer
+);
+ 
+ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_2
+    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
+    REFERENCES Coletores (Codigo_do_Coletor)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Dependentes ADD CONSTRAINT FK_Dependentes_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
+    FOREIGN KEY (fk_Lixeira_Serial)
+    REFERENCES Lixeira (Serial)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
+    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
+    REFERENCES Coletores (Codigo_do_Coletor)
+    ON DELETE SET NULL;
+
+insert into Agenda
+values('1','1','123456789', '2019-12-10','Organico','1'
+	'2','1','90876452', '2019-12-10','reciclavel','2'
+	'3','1','10101010', '2019-12-11','Baterias','3'
+	);
+
+insert into dependentes
+values('Filho','1','M', '1','Jonh','1'
+	'Esposa','24','F', '1','Luana','2'
+	'Filho','3','M', 'Marcox','1');
+
+insert into coletores
+values('10','1','R. das Salivas','2'
+	'0','2','R. das Salivas','1'
+	'10','3','R. das Salivas','2);
+
+insert into lixeira
+values('Organico','10','0'
+	'Reciclavel','0','1'
+	'Baterias','10','3'):
+
+
+insert into residencia
+values('1','R. das Flores'
+	'2','R. das Flores'
+	'3','R. das Dalilas'):
+
+insert into usuario
+values('123.456.789-00','12.3456-ES','1','Marcos'
+	'113.436.709-00','13.1456-ES','2','Lucas'
+	'123.456.789-00','12.3456-ES','3','Sazam'):
 
 ## Marco de Entrega 08 em: (29/05/2019)<br>
 
