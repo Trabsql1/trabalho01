@@ -165,23 +165,37 @@ ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
 
 insert into Agenda
-values('1','1','123456789', '2019-12-10','Orgânico','1')
+values('1','1','123456789', '2019-12-10','Organico','1'
+	'2','1','90876452', '2019-12-10','reciclavel','2'
+	'3','1','10101010', '2019-12-11','Baterias','3'
+	)
 
 insert into dependentes
-values('Filho','1','M', '1','Jonas','1')
+values('Filho','1','M', '1','Jonas','1'
+	'Esposa','24','F', '1','Luiz','2'
+	'Filho','3','M', 'Lucas','1')
 
 insert into coletores
-values('10','1','R. das Salivas','2')
+values('10','1','R. das Salivas','2'
+	'0','2','R. das Salivas','1'
+	'10','3','R. das Salivas','2')
 
 insert into lixeira
-values('Organico','10','12')
+values('Organico','10','0'
+	'Reciclavel','0','1'
+	'Baterias','10','3')
+
 
 insert into residencia
-values('1','R. das Flores')
+values('1','R. das Flores'
+	'2','R. das Flores'
+	'3','R. das Dalilas')
 
 insert into usuario
-values('123.456.789-00','12.3456-ES','1','Marcos')
-
+values('123.456.789-00','12.3456-ES','1','Marcos'
+	'113.436.709-00','13.1456-ES','2','Lucas'
+	'123.456.789-00','12.3456-ES','3','Sazam')
+ 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
         (create para tabelas e estruturas de dados + dados a serem inseridos)
