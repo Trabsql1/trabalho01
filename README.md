@@ -84,85 +84,88 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
 
 
 ### 7	MODELO FÍSICO<br>
+/* Lógico_3: */
+
 CREATE TABLE Usuario (
-    CPF varchar,
-    RG varchar,
-    Tag integer PRIMARY KEY,
-    Nome varchar
-);
-
-CREATE TABLE Residencia (
-    Casa integer PRIMARY KEY,
-    Rua varchar,
-    fk_Coletores_Codigo_do_Coletor integer
-);
-
-CREATE TABLE Lixeira (
-    Tipo varchar,
-    Peso float,
-    Serial integer PRIMARY KEY
+    Tag Integer PRIMARY KEY,
+    Nome Varchar,
+    RG Varchar,
+    CPF Varchar,
+    fk_Dependentes_Codigo Integer
 );
 
 CREATE TABLE Coletores (
-    Peso_Atual float,
-    Codigo_do_Coletor integer PRIMARY KEY,
-    Posicao_atual varchar,
-    Quarteirao_Atribuido integer
+    Codigo_do_Coletor Integer PRIMARY KEY,
+    Peso_Atual Double,
+    Tipo_Local Varchar,
+    Nome_Local Varchar
+);
+
+CREATE TABLE Residencia (
+    Casa Integer PRIMARY KEY,
+    Tipo_Local Varchar,
+    Nome_Local Varchar,
+    fk_Coletores_Codigo_do_Coletor Integer
 );
 
 CREATE TABLE Dependentes (
-    Relacao varchar,
-    Idade integer,
-    Genero character,
-    Codigo integer PRIMARY KEY,
-    Nome varchar,
-    fk_Usuario_Tag integer
+    Relacao Varchar,
+    Idade Integer,
+    Genero Varchar,
+    Nome Varchar,
+    Codigo Integer PRIMARY KEY
 );
 
-CREATE TABLE Acessa (
-    fk_Lixeira_Serial integer,
-    fk_Usuario_Tag integer
+CREATE TABLE Lixeira (
+    Tipo Varchar,
+    Peso Double,
+    Serial Integer PRIMARY KEY
 );
 
 CREATE TABLE Agenda (
-    fk_Usuario_Tag integer,
-    fk_Coletores_Codigo_do_Coletor integer,
-    Protocolo integer PRIMARY KEY,
-    Horario date,
-    Tipo_Lixo varchar,
-    Coletor_requisitado integer
+    fk_Usuario_Tag Integer,
+    fk_Coletores_Codigo_do_Coletor Integer,
+    Protocolo Varchar PRIMARY KEY,
+    Horario Time,
+    Tipo_Lixo Varchar,
+    Coletor_requisitado Varchar
 );
+
+CREATE TABLE Acessa (
+    fk_Lixeira_Serial Integer,
+    fk_Usuario_Tag Integer
+);
+ 
+ALTER TABLE Usuario ADD CONSTRAINT FK_Usuario_2
+    FOREIGN KEY (fk_Dependentes_Codigo)
+    REFERENCES Dependentes (Codigo)
+    ON DELETE CASCADE;
  
 ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_2
     FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
     REFERENCES Coletores (Codigo_do_Coletor)
     ON DELETE CASCADE;
  
-ALTER TABLE Dependentes ADD CONSTRAINT FK_Dependentes_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
-    FOREIGN KEY (fk_Lixeira_Serial)
-    REFERENCES Lixeira (Serial)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
-    ON DELETE RESTRICT;
- 
 ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
     FOREIGN KEY (fk_Usuario_Tag)
     REFERENCES Usuario (Tag)
-    ON DELETE SET NULL;
+    ON DELETE RESTRICT;
  
 ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
     FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
     REFERENCES Coletores (Codigo_do_Coletor)
     ON DELETE SET NULL;
-
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
+    FOREIGN KEY (fk_Lixeira_Serial)
+    REFERENCES Lixeira (Serial)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE SET NULL;
+    
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
 
