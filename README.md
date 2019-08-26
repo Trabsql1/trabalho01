@@ -61,7 +61,8 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
          Gênero: Campo que armazena o gênero do dependente.
       Residência: Tabela que armazena informações da residência representada.
          Casa: Campo que armazena o número da residência. Utilizado como chave.
-         Rua: Campo que armazena o nome da rua que a residência se encontra.
+         Tipo_local: Campo que armazena o tipo do local que a residência se encontra.
+	 Nome_local: Campo que apresenta o nome do local que a rua se encontra.
       Lixeira: Tabela que armeza as informações de cada lixeira
          Serial: Código único que cada lixeira possui
          Tipo: Armazena o tipo de lixo que cada lixeira carrega
@@ -74,11 +75,12 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
      Coletores:
           Código do coletor: campo que armazena o codigo unico do coletor que sera usado para que o coletor seja agendado.
           Peso Atual: campo que armazena o peso atual de um certo coletor, para verificar se um agendamento pode ser atendido por este
-          Posição Atual: campo que armazena o endereço atual do coletor, para verificar se este pode atender certo agendamento
-          quarteirão atribuido: campo que armazena a região pelo qual um coletor faz seus ciclos de colete
+          Nome_local: campo que armazena o nome do local atual do coletor, para verificar se este pode atender certo agendamento.
+	  Tipo_local: Campo que armazena o tipo do local em que o coletor se encontra.
+          
        
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logico.png?raw=true "Modelo Lógico") 
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/ligma.jpg?raw=true "Modelo Lógico") 
 
 
 ### 7	MODELO FÍSICO<br>
