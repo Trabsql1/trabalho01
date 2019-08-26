@@ -41,7 +41,7 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
 ![Tabela de dados da Wite](https://github.com/Trabsql1/trabalho01/blob/master/Weverton_e_Mateus.ods?raw=true "Tabela - Wite")
 
 ### 5.MODELO CONCEITUAL<br>          
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/Conc.png?raw=true "Modelo Conceitual")      
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/Conc.jpg?raw=true "Modelo Conceitual")      
     
 #### 5.1 Validação do Modelo Conceitual
     [Beatriz e Júlia: [Beatriz]
