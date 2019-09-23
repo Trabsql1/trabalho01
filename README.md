@@ -84,67 +84,123 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
 
 
 ### 7	MODELO FÍSICO<br>
-/* Lógico_3: */
+/* Lógico_1: */
 
 CREATE TABLE Usuario (
     Tag Integer PRIMARY KEY,
     Nome Varchar,
     RG Varchar,
     CPF Varchar,
-    fk_Dependentes_Codigo Integer
+    Data de Nascimento Date
 );
 
 CREATE TABLE Coletores (
-    Codigo_do_Coletor Integer PRIMARY KEY,
-    Peso_Atual Double,
-    Tipo_Local Varchar,
-    Nome_Local Varchar
+    Codigo do Coletor Integer PRIMARY KEY,
+    Peso Atual Double
 );
 
 CREATE TABLE Residencia (
-    Casa Integer PRIMARY KEY,
-    Tipo_Local Varchar,
+    Casa Integer,
     Nome_Local Varchar,
-    fk_Coletores_Codigo_do_Coletor Integer
+    Codigo Integer PRIMARY KEY
 );
 
 CREATE TABLE Dependentes (
-    Relacao Varchar,
-    Idade Integer,
-    Genero Varchar,
+    Data de Nascimento Integer,
     Nome Varchar,
     Codigo Integer PRIMARY KEY
 );
 
 CREATE TABLE Lixeira (
-    Tipo Varchar,
     Peso Double,
-    Serial Integer PRIMARY KEY
+    Serial Integer PRIMARY KEY,
+    Peso total Integer
+);
+
+CREATE TABLE Centro de coleta (
+    Vaga Integer PRIMARY KEY,
+    Valor total Double
+);
+
+CREATE TABLE Genero (
+    Codigo Integer PRIMARY KEY,
+    descricao Varchar
+);
+
+CREATE TABLE Relacao (
+    Codigo Integer PRIMARY KEY,
+    Parentesco Varchar
+);
+
+CREATE TABLE Tipo_Local (
+    Codigo Integer PRIMARY KEY,
+    Tipo Varchar
+);
+
+CREATE TABLE Tipo (
+    Código Integer PRIMARY KEY,
+    Lixo Varchar
+);
+
+CREATE TABLE Gênero (
+    Código integer PRIMARY KEY,
+    descrição Varchar
 );
 
 CREATE TABLE Agenda (
     fk_Usuario_Tag Integer,
-    fk_Coletores_Codigo_do_Coletor Integer,
+    fk_Coletores_Codigo do Coletor Integer,
     Protocolo Varchar PRIMARY KEY,
     Horario Time,
     Tipo_Lixo Varchar,
     Coletor_requisitado Varchar
 );
 
+CREATE TABLE Coletores_Residencia_Coletores_Residencia_Lixeira (
+    fk_Coletores_Codigo do Coletor Integer,
+    fk_Residencia_Codigo Integer,
+    fk_Lixeira_Serial Integer
+);
+
+CREATE TABLE Representa (
+    fk_Dependentes_Codigo Integer,
+    fk_Usuario_Tag Integer
+);
+
 CREATE TABLE Acessa (
     fk_Lixeira_Serial Integer,
     fk_Usuario_Tag Integer
 );
- 
-ALTER TABLE Usuario ADD CONSTRAINT FK_Usuario_2
-    FOREIGN KEY (fk_Dependentes_Codigo)
-    REFERENCES Dependentes (Codigo)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Residencia ADD CONSTRAINT FK_Residencia_2
-    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
-    REFERENCES Coletores (Codigo_do_Coletor)
-    ON DELETE CASCADE;
+
+CREATE TABLE Desloca-se (
+    fk_Coletores_Codigo do Coletor Integer,
+    fk_Centro de coleta_Vaga Integer
+);
+
+CREATE TABLE Possui (
+    fk_Genero_Codigo Integer,
+    fk_Dependentes_Codigo Integer
+);
+
+CREATE TABLE É (
+    FK_Dependentes_Codigo Integer,
+    FK_Relacao_Codigo Integer
+);
+
+CREATE TABLE Localiza-se (
+    fk_Tipo_Local_Codigo Integer,
+    fk_Residencia_Codigo Integer
+);
+
+CREATE TABLE Possui (
+    fk_Lixeira_Serial Integer,
+    fk_Tipo_Código Integer
+);
+
+CREATE TABLE Possui (
+    fk_Gênero_Código integer,
+    fk_Usuario_Tag Integer
+);
  
 ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
     FOREIGN KEY (fk_Usuario_Tag)
@@ -152,8 +208,33 @@ ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
     ON DELETE RESTRICT;
  
 ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
-    FOREIGN KEY (fk_Coletores_Codigo_do_Coletor)
-    REFERENCES Coletores (Codigo_do_Coletor)
+    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
+    REFERENCES Coletores (Codigo do Coletor)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_1
+    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
+    REFERENCES Coletores (Codigo do Coletor)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_2
+    FOREIGN KEY (fk_Residencia_Codigo)
+    REFERENCES Residencia (Codigo)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_3
+    FOREIGN KEY (fk_Lixeira_Serial)
+    REFERENCES Lixeira (Serial)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Representa ADD CONSTRAINT FK_Representa_1
+    FOREIGN KEY (fk_Dependentes_Codigo)
+    REFERENCES Dependentes (Codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Representa ADD CONSTRAINT FK_Representa_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
     ON DELETE SET NULL;
  
 ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
@@ -162,6 +243,66 @@ ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
     ON DELETE SET NULL;
  
 ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
+    FOREIGN KEY (fk_Usuario_Tag)
+    REFERENCES Usuario (Tag)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Desloca-se ADD CONSTRAINT FK_Desloca-se_1
+    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
+    REFERENCES Coletores (Codigo do Coletor)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Desloca-se ADD CONSTRAINT FK_Desloca-se_2
+    FOREIGN KEY (fk_Centro de coleta_Vaga)
+    REFERENCES Centro de coleta (Vaga)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
+    FOREIGN KEY (fk_Genero_Codigo)
+    REFERENCES Genero (Codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
+    FOREIGN KEY (fk_Dependentes_Codigo)
+    REFERENCES Dependentes (Codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE É ADD CONSTRAINT FK_É_1
+    FOREIGN KEY (FK_Dependentes_Codigo)
+    REFERENCES Dependentes (Codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE É ADD CONSTRAINT FK_É_2
+    FOREIGN KEY (FK_Relacao_Codigo)
+    REFERENCES Relacao (Codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Localiza-se ADD CONSTRAINT FK_Localiza-se_1
+    FOREIGN KEY (fk_Tipo_Local_Codigo)
+    REFERENCES Tipo_Local (Codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Localiza-se ADD CONSTRAINT FK_Localiza-se_2
+    FOREIGN KEY (fk_Residencia_Codigo)
+    REFERENCES Residencia (Codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
+    FOREIGN KEY (fk_Lixeira_Serial)
+    REFERENCES Lixeira (Serial)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
+    FOREIGN KEY (fk_Tipo_Código)
+    REFERENCES Tipo (Código)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
+    FOREIGN KEY (fk_Gênero_Código)
+    REFERENCES Gênero (Código)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
     FOREIGN KEY (fk_Usuario_Tag)
     REFERENCES Usuario (Tag)
     ON DELETE SET NULL;
