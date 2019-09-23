@@ -84,7 +84,7 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
 
 
 ### 7	MODELO FÍSICO<br>
-/* Lógico_1: */
+/* Lógico 1: */
 
 CREATE TABLE Usuario (
     Tag Integer PRIMARY KEY,
