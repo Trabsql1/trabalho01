@@ -80,7 +80,7 @@ Cada coletor pode ser direcionado a mais de um agendamento após o término de s
           
        
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic.jpg?raw=true "Modelo Lógico") 
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logicooo.jpg?raw=true "Modelo Lógico") 
 
 
 ### 7	MODELO FÍSICO<br>
