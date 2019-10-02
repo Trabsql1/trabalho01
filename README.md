@@ -24,7 +24,7 @@ Cada coletor pode ser direcionado a mais de um agendamento, e caso um não termi
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Alt text](https://user-images.githubusercontent.com/51093933/58552933-ff2ccd00-81e9-11e9-8677-82a3865de28e.png?raw=true "Title")
+![Alt text](IMG-20191002-WA0019.png?raw=true "Title")
 ![Pdf para o projeto Witrash da empresa Wite](https://github.com/discipint/trabalho01/files/3232159/New.Project.pdf?raw=true "Empresa Devcom")
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
