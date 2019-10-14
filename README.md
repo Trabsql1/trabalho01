@@ -41,7 +41,7 @@ Cada coletor pode ser direcionado a mais de um agendamento, e caso um não termi
 ![Tabela de dados da Wite](https://github.com/Trabsql1/trabalho01/blob/master/Weverton_e_Mateus.ods?raw=true "Tabela - Wite")
 
 ### 5.MODELO CONCEITUAL<br>          
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/cooncfin.jpg?raw=true "Modelo Conceitual")      
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/conceitinho.png?raw=true "Modelo Conceitual")      
     
 #### 5.1 Validação do Modelo Conceitual
     [Beatriz e Júlia: [Beatriz]
@@ -80,231 +80,188 @@ Cada coletor pode ser direcionado a mais de um agendamento, e caso um não termi
           
        
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logicooo.jpg?raw=true "Modelo Lógico") 
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logiquinho.png?raw=true "Modelo Lógico") 
 
 
 ### 7	MODELO FÍSICO<br>
-/* Lógico 1: */
+	/* Drop */
 
-CREATE TABLE Usuario (
-    Tag Integer PRIMARY KEY,
-    Nome Varchar,
-    RG Varchar,
-    CPF Varchar,
-    Data de Nascimento Date
+	DROP TABLE IF EXISTS USUARIO_LIXEIRA;
+	DROP TABLE IF EXISTS COLETOR_LIXEIRA;
+	DROP TABLE IF EXISTS LIXEIRA;
+	DROP TABLE IF EXISTS COLETOR;
+	DROP TABLE IF EXISTS CENTRO_COLETA;
+	DROP TABLE IF EXISTS TIPO_LIXO;	
+	DROP TABLE IF EXISTS DEPENDENTE;
+	DROP TABLE IF EXISTS RELACAO;
+	DROP TABLE IF EXISTS USUARIO;
+	DROP TABLE IF EXISTS GENERO;
+	DROP TABLE IF EXISTS LOCAL;
+	DROP TABLE IF EXISTS TIPO_LOCAL;
+
+/* Lógico WITE: */
+
+CREATE TABLE USUARIO (
+    tag integer PRIMARY KEY,
+    rg integer,
+    cpf varchar,
+    nome varchar,
+    data_nasc date,
+    genero integer,
+    numero_residencia integer,
+    localizacao integer
 );
 
-CREATE TABLE Coletores (
-    Codigo do Coletor Integer PRIMARY KEY,
-    Peso Atual Double
+CREATE TABLE DEPENDENTE (
+    codigo integer PRIMARY KEY,
+    nome varchar,
+    data_nasc date,
+    genero integer,
+    usuario_resp integer,
+    relacao integer
 );
 
-CREATE TABLE Residencia (
-    Casa Integer,
-    Nome_Local Varchar,
-    Codigo Integer PRIMARY KEY
+CREATE TABLE LIXEIRA (
+    serial integer PRIMARY KEY,
+    peso_atual float,
+    peso_total float,
+    localizacao integer,
+    tipo_lixo integer
 );
 
-CREATE TABLE Dependentes (
-    Data de Nascimento Integer,
-    Nome Varchar,
-    Codigo Integer PRIMARY KEY
+CREATE TABLE GENERO (
+    codigo integer PRIMARY KEY,
+    descricao char
 );
 
-CREATE TABLE Lixeira (
-    Peso Double,
-    Serial Integer PRIMARY KEY,
-    Peso total Integer
+CREATE TABLE RELACAO (
+    codigo integer PRIMARY KEY,
+    parentesco varchar
 );
 
-CREATE TABLE Centro de coleta (
-    Vaga Integer PRIMARY KEY,
-    Valor total Double
+CREATE TABLE TIPO_LIXO (
+    codigo integer PRIMARY KEY,
+    lixo varchar
 );
 
-CREATE TABLE Genero (
-    Codigo Integer PRIMARY KEY,
-    descricao Varchar
+CREATE TABLE COLETOR (
+    codigo integer PRIMARY KEY,
+    peso_atual float,
+    peso_total float,
+    latitude varchar,
+    longitude varchar,
+    vaga_cc integer,
+    tipo_lixo integer
 );
 
-CREATE TABLE Relacao (
-    Codigo Integer PRIMARY KEY,
-    Parentesco Varchar
+CREATE TABLE CENTRO_COLETA (
+    vaga integer PRIMARY KEY,
+    setor integer
 );
 
-CREATE TABLE Tipo_Local (
-    Codigo Integer PRIMARY KEY,
-    Tipo Varchar
+CREATE TABLE LOCAL (
+    codigo integer PRIMARY KEY,
+    nome_local varchar,
+    tipo_local integer,
+    latitude varchar,
+    longitude varchar
 );
 
-CREATE TABLE Tipo (
-    Código Integer PRIMARY KEY,
-    Lixo Varchar
+CREATE TABLE TIPO_LOCAL (
+    codigo integer PRIMARY KEY,
+    tipo varchar
 );
 
-CREATE TABLE Gênero (
-    Código integer PRIMARY KEY,
-    descrição Varchar
+CREATE TABLE COLETOR_LIXEIRA (
+    lixeira integer,
+    coletor integer,
+    horario time,
+    data date
 );
 
-CREATE TABLE Agenda (
-    fk_Usuario_Tag Integer,
-    fk_Coletores_Codigo do Coletor Integer,
-    Protocolo Varchar PRIMARY KEY,
-    Horario Time,
-    Tipo_Lixo Varchar,
-    Coletor_requisitado Varchar
-);
-
-CREATE TABLE Coletores_Residencia_Coletores_Residencia_Lixeira (
-    fk_Coletores_Codigo do Coletor Integer,
-    fk_Residencia_Codigo Integer,
-    fk_Lixeira_Serial Integer
-);
-
-CREATE TABLE Representa (
-    fk_Dependentes_Codigo Integer,
-    fk_Usuario_Tag Integer
-);
-
-CREATE TABLE Acessa (
-    fk_Lixeira_Serial Integer,
-    fk_Usuario_Tag Integer
-);
-
-CREATE TABLE Desloca-se (
-    fk_Coletores_Codigo do Coletor Integer,
-    fk_Centro de coleta_Vaga Integer
-);
-
-CREATE TABLE Possui (
-    fk_Genero_Codigo Integer,
-    fk_Dependentes_Codigo Integer
-);
-
-CREATE TABLE É (
-    FK_Dependentes_Codigo Integer,
-    FK_Relacao_Codigo Integer
-);
-
-CREATE TABLE Localiza-se (
-    fk_Tipo_Local_Codigo Integer,
-    fk_Residencia_Codigo Integer
-);
-
-CREATE TABLE Possui (
-    fk_Lixeira_Serial Integer,
-    fk_Tipo_Código Integer
-);
-
-CREATE TABLE Possui (
-    fk_Gênero_Código integer,
-    fk_Usuario_Tag Integer
+CREATE TABLE USUARIO_LIXEIRA (
+    tag_usuario integer,
+    lixeira integer,
+    horario time,
+    data date
 );
  
-ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
+    FOREIGN KEY (genero)
+    REFERENCES GENERO (codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_3
+    FOREIGN KEY (localizacao)
+    REFERENCES LOCAL (codigo)
     ON DELETE RESTRICT;
  
-ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
-    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
-    REFERENCES Coletores (Codigo do Coletor)
-    ON DELETE SET NULL;
+ALTER TABLE DEPENDENTE ADD CONSTRAINT FK_DEPENDENTE_2
+    FOREIGN KEY (usuario_resp)
+    REFERENCES USUARIO (tag)
+    ON DELETE CASCADE;
  
-ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_1
-    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
-    REFERENCES Coletores (Codigo do Coletor)
-    ON DELETE NO ACTION;
+ALTER TABLE DEPENDENTE ADD CONSTRAINT FK_DEPENDENTE_3
+    FOREIGN KEY (genero)
+    REFERENCES GENERO (codigo)
+    ON DELETE CASCADE;
  
-ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_2
-    FOREIGN KEY (fk_Residencia_Codigo)
-    REFERENCES Residencia (Codigo)
-    ON DELETE NO ACTION;
+ALTER TABLE DEPENDENTE ADD CONSTRAINT FK_DEPENDENTE_4
+    FOREIGN KEY (relacao)
+    REFERENCES RELACAO (codigo)
+    ON DELETE CASCADE;
  
-ALTER TABLE Coletores_Residencia_Coletores_Residencia_Lixeira ADD CONSTRAINT FK_Coletores_Residencia_Coletores_Residencia_Lixeira_3
-    FOREIGN KEY (fk_Lixeira_Serial)
-    REFERENCES Lixeira (Serial)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE Representa ADD CONSTRAINT FK_Representa_1
-    FOREIGN KEY (fk_Dependentes_Codigo)
-    REFERENCES Dependentes (Codigo)
+ALTER TABLE LIXEIRA ADD CONSTRAINT FK_LIXEIRA_2
+    FOREIGN KEY (localizacao)
+    REFERENCES LOCAL (codigo)
     ON DELETE RESTRICT;
  
-ALTER TABLE Representa ADD CONSTRAINT FK_Representa_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
-    ON DELETE SET NULL;
+ALTER TABLE LIXEIRA ADD CONSTRAINT FK_LIXEIRA_3
+    FOREIGN KEY (tipo_lixo)
+    REFERENCES TIPO_LIXO (codigo)
+    ON DELETE CASCADE;
  
-ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_1
-    FOREIGN KEY (fk_Lixeira_Serial)
-    REFERENCES Lixeira (Serial)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Acessa ADD CONSTRAINT FK_Acessa_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Desloca-se ADD CONSTRAINT FK_Desloca-se_1
-    FOREIGN KEY (fk_Coletores_Codigo do Coletor)
-    REFERENCES Coletores (Codigo do Coletor)
+ALTER TABLE COLETOR ADD CONSTRAINT FK_COLETOR_2
+    FOREIGN KEY (vaga_cc)
+    REFERENCES CENTRO_COLETA (vaga)
     ON DELETE RESTRICT;
  
-ALTER TABLE Desloca-se ADD CONSTRAINT FK_Desloca-se_2
-    FOREIGN KEY (fk_Centro de coleta_Vaga)
-    REFERENCES Centro de coleta (Vaga)
-    ON DELETE SET NULL;
+ALTER TABLE COLETOR ADD CONSTRAINT FK_COLETOR_3
+    FOREIGN KEY (tipo_lixo)
+    REFERENCES TIPO_LIXO (codigo)
+    ON DELETE CASCADE;
  
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
-    FOREIGN KEY (fk_Genero_Codigo)
-    REFERENCES Genero (Codigo)
+ALTER TABLE LOCAL ADD CONSTRAINT FK_LOCAL_2
+    FOREIGN KEY (tipo_local)
+    REFERENCES TIPO_LOCAL (codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE COLETOR_LIXEIRA ADD CONSTRAINT 
+
+FK_COLETOR_LIXEIRA_1
+    FOREIGN KEY (lixeira)
+    REFERENCES LIXEIRA (serial)
     ON DELETE RESTRICT;
  
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
-    FOREIGN KEY (fk_Dependentes_Codigo)
-    REFERENCES Dependentes (Codigo)
+ALTER TABLE COLETOR_LIXEIRA ADD CONSTRAINT 
+
+FK_COLETOR_LIXEIRA_2
+    FOREIGN KEY (coletor)
+    REFERENCES COLETOR (codigo)
     ON DELETE SET NULL;
  
-ALTER TABLE É ADD CONSTRAINT FK_É_1
-    FOREIGN KEY (FK_Dependentes_Codigo)
-    REFERENCES Dependentes (Codigo)
+ALTER TABLE USUARIO_LIXEIRA ADD CONSTRAINT 
+
+FK_USUARIO_LIXEIRA_1
+    FOREIGN KEY (tag_usuario)
+    REFERENCES USUARIO (tag)
     ON DELETE SET NULL;
  
-ALTER TABLE É ADD CONSTRAINT FK_É_2
-    FOREIGN KEY (FK_Relacao_Codigo)
-    REFERENCES Relacao (Codigo)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Localiza-se ADD CONSTRAINT FK_Localiza-se_1
-    FOREIGN KEY (fk_Tipo_Local_Codigo)
-    REFERENCES Tipo_Local (Codigo)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Localiza-se ADD CONSTRAINT FK_Localiza-se_2
-    FOREIGN KEY (fk_Residencia_Codigo)
-    REFERENCES Residencia (Codigo)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
-    FOREIGN KEY (fk_Lixeira_Serial)
-    REFERENCES Lixeira (Serial)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
-    FOREIGN KEY (fk_Tipo_Código)
-    REFERENCES Tipo (Código)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_1
-    FOREIGN KEY (fk_Gênero_Código)
-    REFERENCES Gênero (Código)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Possui ADD CONSTRAINT FK_Possui_2
-    FOREIGN KEY (fk_Usuario_Tag)
-    REFERENCES Usuario (Tag)
+ALTER TABLE USUARIO_LIXEIRA ADD CONSTRAINT 
+
+FK_USUARIO_LIXEIRA_2
+    FOREIGN KEY (lixeira)
+    REFERENCES LIXEIRA (serial)
     ON DELETE SET NULL;
     
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
@@ -541,43 +498,14 @@ ALTER TABLE Agenda ADD CONSTRAINT FK_Agenda_3
     REFERENCES Coletores (Codigo_do_Coletor)
     ON DELETE SET NULL;
 
-insert into Agenda
-values('1','1','123456789', '2019-12-10','Organico','1'
-	'2','1','90876452', '2019-12-10','reciclavel','2'
-	'3','1','10101010', '2019-12-11','Baterias','3'
-	);
-
-insert into dependentes
-values('Filho','1','M', '1','Jonh','1'
-	'Esposa','24','F', '1','Luana','2'
-	'Filho','3','M', 'Marcox','1');
-
-insert into coletores
-values('10','1','R. das Salivas','2'
-	'0','2','R. das Salivas','1'
-	'10','3','R. das Salivas','2);
-
-insert into lixeira
-values('Organico','10','0'
-	'Reciclavel','0','1'
-	'Baterias','10','3'):
-
-
-insert into residencia
-values('1','R. das Flores'
-	'2','R. das Flores'
-	'3','R. das Dalilas'):
-
-insert into usuario
-values('123.456.789-00','12.3456-ES','1','Marcos'
-	'113.436.709-00','13.1456-ES','2','Lucas'
-	'123.456.789-00','12.3456-ES','3','Sazam'):
 
 ## Marco de Entrega 08 em: (29/05/2019)<br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
+  Link do arquivo com as inserções no colab: https://colab.research.google.com/drive/1GBz6k8r0AdMECqSUXCkF2jOOtDI4QJ2K
+  
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
