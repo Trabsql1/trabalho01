@@ -285,11 +285,11 @@ FK_USUARIO_LIXEIRA_2
 	select * from tipo_lixo	
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where1.png?raw=true)
-	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where2.png?raw=true)
-	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where3.png?raw=true)
-	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where4.png?raw=true)
-	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where5.png?raw=true) 
+	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where1.png?raw=true "where 1")
+	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where2.png?raw=true "where 2")
+	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where3.png?raw=true "where 3")
+	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where4.png?raw=true "where 4")
+	![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/where5.png?raw=true "where 5") 
 
 		
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
