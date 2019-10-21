@@ -285,6 +285,12 @@ FK_USUARIO_LIXEIRA_2
 	select * from tipo_lixo	
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+	https://github.com/Trabsql1/trabalho01/blob/master/where1?raw=true
+	https://github.com/Trabsql1/trabalho01/blob/master/where2?raw=true
+	https://github.com/Trabsql1/trabalho01/blob/master/where3?raw=true
+	https://github.com/Trabsql1/trabalho01/blob/master/where4?raw=true
+	https://github.com/Trabsql1/trabalho01/blob/master/where5?raw=true
+
 		
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
