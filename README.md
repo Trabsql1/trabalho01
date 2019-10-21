@@ -273,8 +273,19 @@ FK_USUARIO_LIXEIRA_2
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
   
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+	select * from lixeira
+	select * from usuario
+	select * from dependente
+	select * from coletor
+	select * from local
+	select * from centro_coleta
+	select * from genero
+	select * from relacao
+	select * from tipo_local
+	select * from tipo_lixo	
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+		
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
