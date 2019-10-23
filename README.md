@@ -294,9 +294,17 @@ FK_USUARIO_LIXEIRA_2
 
 		
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+   Lógicos
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic1.png?raw=true "Lógico 1")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic2.png?raw=true "Lógico 2")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic3.png?raw=true "Lógico 3")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic4.png?raw=true "Lógico 4")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic5.png?raw=true "Lógico 5")
+Aritimético e renomeação
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit1.png?raw=true "Aritimético e renomeação 1")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit2.png?raw=true "Aritimético e renomeação 2")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit3.png?raw=true "Aritimético e renomeação 3")
+
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
