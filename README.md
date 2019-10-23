@@ -300,6 +300,7 @@ FK_USUARIO_LIXEIRA_2
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic3.png?raw=true "Lógico 3")
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic4.png?raw=true "Lógico 4")
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/logic5.png?raw=true "Lógico 5")
+
 Aritimético e renomeação
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit1.png?raw=true "Aritimético e renomeação 1")
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit2.png?raw=true "Aritimético e renomeação 2")
