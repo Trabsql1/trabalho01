@@ -313,12 +313,24 @@ Aritimético e renomeação
 
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+UPDATE lixeira SET PESO_ATUAL = 39.4 WHERE serial = 70
 
+UPDATE lixeira SET PESO_ATUAL = 201.9 WHERE serial = 70
+
+DELETE FROM usuario WHERE RG = 8878785
+
+DELETE FROM coletor WHERE codigo = 58
+
+UPDATE LOCAL SET nome_local ‘Vale da costa’ WHERE codigo = 9
+
+DELETE FROM centro_coleta WHERE vaga > 95
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-        a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
-        b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-        
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join1.jpg?raw=true "Join 1")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join2.jpg?raw=true "Join 2")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join3.jpg?raw=true "Join 3")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join4.jpg?raw=true "Join 4")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join5.jpg?raw=true "Join 5")
 
 ### ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO SEMESTRAL (Mínimo 6 e Máximo 10)<br>
 
