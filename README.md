@@ -307,10 +307,6 @@ Aritimético e renomeação
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/arit3.png?raw=true "Aritimético e renomeação 3")
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
-
-
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 UPDATE lixeira SET PESO_ATUAL = 39.4 WHERE serial = 70
