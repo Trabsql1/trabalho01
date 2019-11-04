@@ -326,10 +326,10 @@ UPDATE LOCAL SET nome_local ‘Vale da costa’ WHERE codigo = 9
 DELETE FROM centro_coleta WHERE vaga > 95
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join1.png?raw=true "Join 1")
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join2.png?raw=true "Join 2")
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join3.png?raw=true "Join 3")
-![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join4.png?raw=true "Join 4")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join1.jpeg?raw=true "Join 1")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join2.jpeg?raw=true "Join 2")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join3.jpeg?raw=true "Join 3")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join4.jpeg?raw=true "Join 4")
 ![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/join5.jpg?raw=true "Join 5")
 
 ### ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO SEMESTRAL (Mínimo 6 e Máximo 10)<br>
