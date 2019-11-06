@@ -336,6 +336,12 @@ DELETE FROM centro_coleta WHERE vaga > 95
 
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group1.png?raw=true "Group 1")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group2.png?raw=true "Group 2")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group3.png?raw=true "Group 3")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group4.png?raw=true "Group 4")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group5.png?raw=true "Group 5")
+![Alt text](https://github.com/Trabsql1/trabalho01/blob/master/group6.png?raw=true "Group 6")
 
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
